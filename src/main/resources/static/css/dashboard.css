@@ -1,0 +1,217 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    background-color: #b3fffb;
+    background-image:
+            linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.3)),
+            url(http://www.transparenttextures.com/patterns/cartographer.png);
+    background-attachment: fixed;
+}
+
+.dashboard-container {
+    padding: 20px 0;
+    position: relative;
+}
+
+.dashboard-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    z-index: 1000;
+    border-bottom: 1px solid #e9ecef;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 0 0 16px 16px;
+    padding: 0 20px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    border-radius: 50%;
+}
+
+.sidebar-left, .sidebar-right {
+    position: sticky;
+    top: 100px; /* Ниже хедера */
+    height: calc(100vh - 120px); /* Заполняет вертикаль */
+    overflow-y: auto;
+}
+
+.sidebar-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.sidebar-card h5 {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.sidebar-card li, .sidebar-card p {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.sidebar-card ul li {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #6c757d;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.sidebar-card ul li i {
+    font-size: 16px;
+}
+
+.sidebar-card .btn {
+    font-size: 14px;
+}
+
+.sidebar-card ul li:last-child {
+    border-bottom: none;
+}
+
+.main-content {
+    margin-top: 80px;
+    min-height: calc(100vh - 80px);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+h1, h3 {
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.form-select {
+    max-width: 250px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.charts-row .col-md-6 {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+@media (max-width: 768px) {
+    .charts-row .col-md-6 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Subtle декор для пустых зон */
+body::before {
+    content: '';
+    position: fixed;
+    top: 20%;
+    right: 5%;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0,123,255,0.1) 0%, rgba(0,123,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px);
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 15%;
+    left: 8%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(255,0,150,0.08) 0%, rgba(255,0,150,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.decor-1 {
+    position: fixed;
+    top: 10%;
+    left: 15%;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(100,200,255,0.12) 0%, rgba(100,200,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(12px);
+}
+
+.decor-2 {
+    position: fixed;
+    bottom: 25%;
+    right: 20%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(255,200,0,0.09) 0%, rgba(255,200,0,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+.decor-3 {
+    position: fixed;
+    top: 50%;
+    left: 5%;
+    width: 140px;
+    height: 140px;
+    background: radial-gradient(circle, rgba(0,200,100,0.07) 0%, rgba(0,200,100,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(18px);
+}
+
+.decor-4 {
+    position: fixed;
+    top: 65%;
+    right: 12%;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(150,100,255,0.11) 0%, rgba(150,100,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(14px);
+}
+
+.decor-5 {
+    position: fixed;
+    bottom: 10%;
+    left: 25%;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(255,100,100,0.06) 0%, rgba(255,100,100,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(20px);
+}
+
+#productsGrid .col-md-4 {
+    display: flex;
+}
+
+.product-card {
+    flex: 1;
+}

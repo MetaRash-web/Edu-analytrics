@@ -1,0 +1,105 @@
+.chart-card {
+    min-height: 450px;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.07);
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* ==== Сам график ==== */
+.ct-chart {
+    height: 380px;
+    width: 100%;
+    background: transparent;
+    border-radius: 12px;
+    position: relative;
+    overflow: visible;
+}
+
+@media (max-width: 992px) {
+    .ct-label.ct-horizontal {
+        transform: rotate(-45deg) translateY(8px) translateX(-8px);
+        transform-origin: center;
+        text-anchor: end;
+        font-size: 10px;
+    }
+
+    /* Уменьшаем отступ под ось X, чтобы влезло */
+    .ct-chart {
+        height: 360px;
+    }
+
+    .chart-card {
+        padding: 16px;
+    }
+
+    .chart-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (min-width: 993px) {
+    .ct-label.ct-horizontal {
+        transform: none !important;
+        text-anchor: middle;
+        font-size: 11px;
+    }
+}
+
+/* Линии */
+.ct-series-a .ct-line { stroke: #4361ee; stroke-width: 2.5px; }
+.ct-series-b .ct-line { stroke: #2ecc71; stroke-width: 2.5px; }
+.ct-series-c .ct-line { stroke: #f39c12; stroke-width: 2.5px; }
+
+/* Точки – делаем их почти невидимыми, только при hover */
+.ct-point {
+    stroke-width: 6px;
+    stroke-opacity: 0.6;
+    fill: #fff;
+    stroke: inherit;
+    transition: stroke-opacity .2s;
+}
+.ct-point:hover { stroke-opacity: 1; }
+
+/* Сетка – почти исчезает */
+.ct-grid {
+    stroke: #e9ecef;
+    stroke-width: 0.5px;
+    stroke-dasharray: 3 3;
+}
+
+/* Подписи осей */
+.ct-label {
+    fill: #6c757d;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* Ось X – только нужные метки */
+.ct-axis-title { fill: #495057; font-weight: 600; }
+
+/* Tooltip (через плагин) */
+.ct-tooltip {
+    background: rgba(0,0,0,.85);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.ct-label.ct-horizontal {
+    transform: rotate(-45deg) translateY(10px); /* Поворот + смещение вниз */
+    transform-origin: top left; /* Origin слева сверху, чтобы текст "падал" вниз */
+    text-anchor: start; /* Выравнивание по левому краю */
+    dominant-baseline: auto; /* Стандартное, чтобы не "висеть" */
+    white-space: nowrap; /* Не переносить текст */
+    font-size: 11px;
+    font-weight: 500;
+    fill: #6c757d;
+    position: relative;
+    left: 10px; /* Лёгкий сдвиг влево, если нужно подкорректировать */
+}
+
+/* Hover‑эффект карточки */
+.chart-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,.12); transition: .3s; }
